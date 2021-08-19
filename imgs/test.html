@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+ 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>table表格，thead固定，tbody滚动条</title>
+    <style>
+      table tbody {
+        display: block;
+        height: 195px;
+        overflow-y: scroll;
+      }
+ 
+      table thead,
+      tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+      }
+ 
+      table thead { 
+        width: calc( 100% - 1em)
+      }
+ 
+      table thead th {
+        background: #ccc;
+      }
+    </style>
+  </head>
+ 
+  <body>
+	<script>
+		function aa() {
+			var node = [{text: ["未下发", "2021-08-16 11:20", "1"]}, {text: ["已下发订舱口", null, "0"]}]
+			node.forEach(el => {console.log(el);console.log(el[2]);console.log(el.text[2] === `1`)})
+	}
+	aa();
+	</script>
+  </body>
+ 
+</html>
